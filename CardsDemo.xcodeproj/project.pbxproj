@@ -13,6 +13,8 @@
 		8E018DA31A2A3D9C00BFBC40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E018DA21A2A3D9C00BFBC40 /* Images.xcassets */; };
 		8E018DA61A2A3D9C00BFBC40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E018DA41A2A3D9C00BFBC40 /* LaunchScreen.xib */; };
 		8E018DB21A2A3D9C00BFBC40 /* CardsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E018DB11A2A3D9C00BFBC40 /* CardsDemoTests.swift */; };
+		8E018DBD1A2A3DC100BFBC40 /* MABCardsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E018DBB1A2A3DC100BFBC40 /* MABCardsContainer.swift */; };
+		8E018DBE1A2A3DC100BFBC40 /* MABCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E018DBC1A2A3DC100BFBC40 /* MABCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		8E018DAB1A2A3D9C00BFBC40 /* CardsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E018DB01A2A3D9C00BFBC40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E018DB11A2A3D9C00BFBC40 /* CardsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDemoTests.swift; sourceTree = "<group>"; };
+		8E018DBB1A2A3DC100BFBC40 /* MABCardsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MABCardsContainer.swift; sourceTree = "<group>"; };
+		8E018DBC1A2A3DC100BFBC40 /* MABCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MABCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		8E018D981A2A3D9B00BFBC40 /* CardsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8E018DBB1A2A3DC100BFBC40 /* MABCardsContainer.swift */,
+				8E018DBC1A2A3DC100BFBC40 /* MABCardView.swift */,
 				8E018D9B1A2A3D9C00BFBC40 /* AppDelegate.swift */,
 				8E018D9D1A2A3D9C00BFBC40 /* ViewController.swift */,
 				8E018D9F1A2A3D9C00BFBC40 /* Main.storyboard */,
@@ -212,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E018DBD1A2A3DC100BFBC40 /* MABCardsContainer.swift in Sources */,
+				8E018DBE1A2A3DC100BFBC40 /* MABCardView.swift in Sources */,
 				8E018D9E1A2A3D9C00BFBC40 /* ViewController.swift in Sources */,
 				8E018D9C1A2A3D9C00BFBC40 /* AppDelegate.swift in Sources */,
 			);

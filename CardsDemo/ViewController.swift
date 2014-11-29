@@ -8,11 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MABCardsContainerDelegate, MABCardsContainerDataSource {
 
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  var swipeableView:MABCardsContainer!
+  var colorIndex = 0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor(red: 0, green: 176.0/255, blue: 1, alpha: 1)
+    
+    self.swipeableView = MABCardsContainer(frame: CGRectMake(20, 30, 280, 400))
+    self.swipeableView.setNeedsLayout()
+    self.swipeableView.layoutIfNeeded()
+    self.swipeableView.dataSource = self;
+    self.swipeableView.delegate = self;
+    
+    var btn = UIButton(frame: CGRectMake(10, 430, 300, 50))
+    btn .setTitle("Reload Cards", forState: UIControlState.Normal)
+    //btn.backgroundColor = UIColor.blackColor()
+    btn.addTarget(self, action: "reload", forControlEvents: UIControlEvents.TouchUpInside)
+    
+    self.view.addSubview(swipeableView)
+    self.view.addSubview(btn)
+    
+    self.reload()
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -21,5 +47,38 @@ class ViewController: UIViewController {
   }
 
 
+  func reload() {
+    self.colorIndex = 0
+    self.swipeableView.discardAllSwipeableViews()
+    self.swipeableView.loadNextSwipeableViewsIfNeeded(true)
+  }
+  
+  
+  func generateColor() -> UIColor {
+    var randomRed:CGFloat = CGFloat(drand48())
+    var randomGreen:CGFloat = CGFloat(drand48())
+    var randomBlue:CGFloat = CGFloat(drand48())
+    return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+  }
+  
+  
+  // MABCardsContainerDelegate
+  func containerViewDidSwipeLeft(containerView:MABCardsContainer, UIView) {}
+  func containerViewDidSwipeRight(containerView:MABCardsContainer, UIView) {}
+  func containerViewDidStartSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint) {}
+  func containerSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint, translation:CGPoint) {}
+  func containerViewDidEndSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint) {}
+  
+  // MABCardsContainerDataSource
+  func nextCardViewForContainerView(containerView:MABCardsContainer) -> UIView! {
+    if (self.colorIndex < 10) {
+      var card = MABCardView(frame: swipeableView.bounds)
+      card.backgroundColor = self.generateColor()
+      self.colorIndex++;
+      return card;
+    }
+    return nil;
+  }
+  
 }
 
