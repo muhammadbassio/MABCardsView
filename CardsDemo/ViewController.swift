@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, MABCardsContainerDelegate, MABCardsContainerDataSource {
 
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -29,7 +29,7 @@ class ViewController: UIViewController, MABCardsContainerDelegate, MABCardsConta
     self.swipeableView.dataSource = self;
     self.swipeableView.delegate = self;
     
-    var btn = UIButton(frame: CGRectMake(10, 430, 300, 50))
+    let btn = UIButton(frame: CGRectMake(10, 430, 300, 50))
     btn .setTitle("Reload Cards", forState: UIControlState.Normal)
     //btn.backgroundColor = UIColor.blackColor()
     btn.addTarget(self, action: "reload", forControlEvents: UIControlEvents.TouchUpInside)
@@ -55,16 +55,16 @@ class ViewController: UIViewController, MABCardsContainerDelegate, MABCardsConta
   
   
   func generateColor() -> UIColor {
-    var randomRed:CGFloat = CGFloat(drand48())
-    var randomGreen:CGFloat = CGFloat(drand48())
-    var randomBlue:CGFloat = CGFloat(drand48())
+    let randomRed:CGFloat = CGFloat(drand48())
+    let randomGreen:CGFloat = CGFloat(drand48())
+    let randomBlue:CGFloat = CGFloat(drand48())
     return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
   }
   
   
   // MABCardsContainerDelegate
-  func containerViewDidSwipeLeft(containerView:MABCardsContainer, UIView) {}
-  func containerViewDidSwipeRight(containerView:MABCardsContainer, UIView) {}
+  func containerViewDidSwipeLeft(containerView:MABCardsContainer, _: UIView) {}
+  func containerViewDidSwipeRight(containerView:MABCardsContainer, _: UIView) {}
   func containerViewDidStartSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint) {}
   func containerSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint, translation:CGPoint) {}
   func containerViewDidEndSwipingCard(containerView:MABCardsContainer, card:UIView, location:CGPoint) {}
@@ -72,7 +72,7 @@ class ViewController: UIViewController, MABCardsContainerDelegate, MABCardsConta
   // MABCardsContainerDataSource
   func nextCardViewForContainerView(containerView:MABCardsContainer) -> UIView! {
     if (self.colorIndex < 10) {
-      var card = MABCardView(frame: swipeableView.bounds)
+      let card = MABCardView(frame: swipeableView.bounds)
       card.backgroundColor = self.generateColor()
       self.colorIndex++;
       return card;

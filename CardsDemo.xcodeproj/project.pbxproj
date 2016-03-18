@@ -162,6 +162,8 @@
 		8E018D8E1A2A3D9B00BFBC40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Muhammad Bassio";
 				TargetAttributes = {
@@ -413,6 +415,7 @@
 				8E018DB71A2A3D9C00BFBC40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E018DB81A2A3D9C00BFBC40 /* Build configuration list for PBXNativeTarget "CardsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +424,7 @@
 				8E018DBA1A2A3D9C00BFBC40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
