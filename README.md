@@ -1,4 +1,4 @@
-MABCardsView (swift)
+MABCardsView (swift 2)
 ====================
 
 A Swift port for https://github.com/zhxnlai/ZLSwipeableView
